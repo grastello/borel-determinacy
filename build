@@ -1,0 +1,6 @@
+#!/bin/sh
+
+xelatex main
+xelatex main
+
+echo "build complete!"
