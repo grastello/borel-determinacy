@@ -16,6 +16,8 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 
+\usepackage{tikz}
+
 \begin{document}
 
 \section{Giochi di Gale-Stewart}
@@ -49,6 +51,83 @@
   \pause
   \begin{block}{Remark}
     Se \(T = A^{<\omega}\) otteniamo i giochi di Gale-Stewart su \(A\).
+  \end{block}
+\end{frame}
+
+\begin{frame}{Strategie}
+  Fissiamo un gioco \(G(X, T)\).
+  \begin{block}{Definizione}
+     Una \textbf{strategia} per \(\mathrm{I}\) è un albero \(\sigma \subseteq T\) tale che
+    \begin{itemize}
+    \item[1.] \(\sigma\) è potato e non vuoto;
+    \item[2.] se \((a_0, \ldots, a_{2j}) \in \sigma\) allora ogni \((a_0, \ldots, a_{2j}, a_{2j+1}) \in T\) è in \(\sigma\);
+    \item[3.] se \((a_0, \ldots, a_{2j - 1}) \in \sigma\) allora esiste un unico \(a_{2j} \in A\) tale che \((a_0, \ldots, a_{2j - 1}, a_{2j}) \in \sigma\).
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Strategie}
+  Se \(A = \{0, 1, 2\}\) e \(T = A^{<\omega}\) allora
+  \begin{equation*}
+    \begin{tikzpicture}
+      \node (1) at (0, 0){\(0\)};
+      \node (11) at (-2, -1){\(0\)};
+      \node (12) at (0, -1){\(1\)};
+      \node (13) at (2, -1){\(2\)};
+      \node (21) at (-2, -2){\(0\)};
+      \node (22) at (0, -2){\(1\)};
+      \node (23) at (2, -2){\(2\)};
+      \node (dots) at (0, -3.5){\(\vdots\)};
+      \node (dots) at (-2, -3.5){\(\vdots\)};
+      \node (dots) at (2, -3.5){\(\vdots\)};
+
+      \node (a) at (3.5, 0){\(\mathrm{I}\)};
+      \node (a) at (3.5, -1){\(\mathrm{II}\)};
+      \node (a) at (3.5, -2){\(\mathrm{I}\)};
+
+      \draw[-] (1) -- (11) -- (21);
+      \draw[-] (1) -- (12) -- (22);
+      \draw[-] (1) -- (13) -- (23);
+
+      \draw[-] (21) -- (-2.5, -3);
+      \draw[-] (21) -- (-2, -3);
+      \draw[-] (21) -- (-1.5, -3);
+
+      \draw[-] (22) -- (-0.5, -3);
+      \draw[-] (22) -- (0, -3);
+      \draw[-] (22) -- (0.5, -3);
+
+      \draw[-] (23) -- (1.5, -3);
+      \draw[-] (23) -- (2, -3);
+      \draw[-] (23) -- (2.5, -3);
+    \end{tikzpicture}
+  \end{equation*}
+  è una strategia per \(\mathrm{I}\).
+\end{frame}
+
+\begin{frame}{Strategie}
+  \begin{block}{Definizione}
+    Una strategia \(\sigma \subseteq T\) per \(\mathrm{I}\) è \textbf{vincente} se \([\sigma] \subseteq X\) i.e. se \(\mathrm{I}\) vince ogni partita giocata seguendo \(\sigma\).
+  \end{block}
+  \pause
+  Similmente definiamo strategie per \(\mathrm{II}\).
+  \pause
+  \begin{block}{Remark}
+    Siccome \(G(X, T)\) non può finire in un pareggio non è possibile che sia \(\mathrm{I}\) che \(\mathrm{II}\) abbiano una strategia vincente.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Determinatezza}
+  \begin{block}{Definizione}
+    Un gioco \(G(X, T)\), o solamente l'insieme \(X \subseteq T\), si dice \textbf{determinato} se uno dei due giocatori ha una strategia vincente.
+  \end{block}
+  \pause
+  \begin{block}{Domande}
+    \begin{itemize}
+    \item I chiusi e gli aperti sono determinati?
+    \item I Boreliani sono determinati?
+    \item Gli analitici sono determinati?
+    \end{itemize}
   \end{block}
 \end{frame}
 \end{document}
