@@ -1,0 +1,54 @@
+\documentclass[aspectratio=43]{beamer}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+
+\usetheme{Dresden}
+\usecolortheme{beaver}
+
+\usepackage{libertine}
+\usepackage{unicode-math}
+
+\usetheme{default}
+
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\begin{document}
+
+\section{Giochi di Gale-Stewart}
+
+\begin{frame}{Giochi di Gale-Stewart su \(A\)}
+  Sia \(A \neq \emptyset\) un insieme e \(X \subseteq A^\omega\) un \textbf{payoff set}.
+  Consideriamo il gioco di Gale-Stewart \(G(A, X)\)
+  \begin{equation*}
+    \begin{matrix}
+      \mathrm{I} & a_0 & & a_2 & & \ldots\\
+      \mathrm{II} & & a_1 & & a_3 & \ldots
+    \end{matrix}
+  \end{equation*}
+  \pause
+  dove
+  \begin{itemize}
+  \item \(\mathrm{I}\) vince se \((a_n)_{n < \omega} \in X\);
+  \item \(\mathrm{II}\) vince se \((a_n)_{n < \omega} \not\in X\).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Giochi di Gale-Stewart su \(T\)}
+  Sia \(T \subseteq A^{<\omega}\) e \(X\subseteq [T]\) un payoff set; allora possiamo considerare il gioco \(G(T, X)\)
+  \begin{equation*}
+    \begin{matrix}
+      \mathrm{I} & a_0 & & a_2 & & \ldots\\
+      \mathrm{II} & & a_1 & & a_3 & \ldots
+    \end{matrix}
+  \end{equation*}
+  con la restrizione aggiunta che \((a_0, \ldots, a_n) \in T\) per ogni \(n < \omega\) e le medesime condizioni di vittoria.
+  \pause
+  \begin{block}{Remark}
+    Se \(T = A^{<\omega}\) otteniamo i giochi di Gale-Stewart su \(A\).
+  \end{block}
+\end{frame}
+\end{document}
