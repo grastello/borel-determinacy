@@ -154,4 +154,52 @@
     Se una posizione \(p = (a_0, \ldots, a_{2n+1}) \in T\) è non perdente per \(\mathrm{I}\) allora esiste un \(a_{2n + 2}\) che \(\mathrm{I}\) può giocare (i.e. \((a_{2n +2}) \in T_p\)) tale che per ogni \(a_{2n + 3}\) con cui \(\mathrm{II}\) può rispondere (i.e. \((a_{2n + 2}, a_{2n + 3}) \in T_p\)) la posizione \(p^\smallfrown (a_{2n + 2}, a_{2n + 3}) \in T\) sia ancora non perdente per \(\mathrm{I}\).
   \end{block}
 \end{frame}
+
+\begin{frame}{Dimostrazione}
+  \begin{block}{}
+    Lavoriamo con \(X\) chiuso ed assumiamo che \(\mathrm{II}\) non abbia strategia vincente (se la ha allora abbiamo il teorema).
+  \end{block}
+  \pause
+
+  \begin{block}{}
+    Per costruire una strategia vincente per \(\mathrm{I}\) osserviamo che se \(\mathrm{II}\) non ha una strategia vincente allora \(\emptyset\) è una posizione non perdente per \(\mathrm{I}\).
+    Allora \(\mathrm{I}\) può, come prima mossa, giocare un \(a_0\) tale che per ogni \(a_1\) per cui \((a_0, a_1) \in T\) quest'ultima posizione è ancora non perdente per \(\mathrm{I}\).
+  \end{block}
+  \pause
+
+  \begin{block}{}
+    Adesso per ogni \(a_1\) con cui \(\mathrm{II}\) può rispondere, per scelta di \(a_0\), esiste un \(a_2\) che \(\mathrm{I}\) può giocare e tale che per ogni \(a_3\) tale che \((a_0, a_1, a_2, a_3) \in T\) questa sia una posizione non perdente per \(\mathrm{I}\).
+  \end{block}
+\end{frame}
+
+\begin{frame}{Dimostrazione}
+  \begin{block}{}
+    In questo modo costruiamo una strategia \(\sigma \subseteq T\) per \(\mathrm{I}\) con la proprietà che, se \((a_0, \ldots, a_{2n+1}) \in \sigma\) allora questa è una posizione non perdente per \(\mathrm{I}\).
+  \end{block}
+  \pause
+  \begin{block}{}
+    Sia \((a_n)_n\) una partita dove \(\mathrm{I}\) ha seguito \(\sigma\) i.e. \((a_n)_n \in [\sigma]\).
+    Se \((a_n)_n \not\in X\), cioè \((a_n)_n \in [T] - X\), siccome \([T]\) è chiuso abbiamo che esiste un \(k < \omega\) tale che
+    \begin{equation*}
+      N_{(a_0, \ldots, a_{2k+1})}\cap[T] \subseteq [T] - X.
+    \end{equation*}
+    Ma, se esiste un tale \(k\), abbiamo che \((a_0, \ldots, a_{2k+1})\) è una posizione perdente per \(\mathrm{I}\) siccome \(\mathrm{II}\) vince giocando mosse arbitrarie.
+
+  \end{block}
+\end{frame}
+
+\begin{frame}{Dimostrazione}
+  \begin{block}{}
+    Questo è assurdo perché \((a_0, \ldots, a_{2k+1}) \in \sigma\) e dunque deve essere non perdente per \(\mathrm{I}\).
+    Dobbiamo dunque avere \((a_n)_n \in X\) e quindi \([\sigma] \subseteq X\); \(\mathrm{I}\) ha una strategia vincente.
+  \end{block}
+  \pause
+  \begin{block}{}
+    Se \(X\) è aperto possiamo ripetere lo stesso argomento invertendo i ruoli di \(\mathrm{I}\) e \(\mathrm{II}\).
+    \begin{flushright}
+      \qedsymbol
+    \end{flushright}
+  \end{block}
+\end{frame}
+
 \end{document}
