@@ -54,6 +54,8 @@
   \end{block}
 \end{frame}
 
+\section{Strategie}
+
 \begin{frame}{Strategie}
   Fissiamo un gioco \(G(X, T)\).
   \begin{block}{Definizione}
@@ -117,6 +119,8 @@
   \end{block}
 \end{frame}
 
+\section{Determinatezza}
+
 \begin{frame}{Determinatezza}
   \begin{block}{Definizione}
     Un gioco \(G(X, T)\), o solamente l'insieme \(X \subseteq T\), si dice \textbf{determinato} se uno dei due giocatori ha una strategia vincente.
@@ -128,6 +132,26 @@
     \item I Boreliani sono determinati?
     \item Gli analitici sono determinati?
     \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Determinatezza dei giochi chiusi}
+  \begin{block}{Teorema (Gale-Stewart)}
+    Dato \(T \subseteq A^{<\omega}\) potato e non-vuoto se \(X \subseteq [T]\) è aperto (o chiuso) in \([T]\) allora \(G(X, T)\) è determinato.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Posizioni non perdenti}
+    \begin{block}{Definizione}
+    Data una posizione \(p = (a_0, \ldots, a_{2n+1}) \in T\) diciamo che \(p\) è \textbf{non perdente} per \(\mathrm{I}\) se \(\mathrm{II}\) non ha una strategia vincente a partire da \(p\).
+    Formalmente \(p\) è non perdente per \(\mathrm{I}\) se \(\mathrm{II}\) non ha una strategia vincente per il gioco \(G(T_p, X_p)\)     dove
+    \begin{equation*}
+      T_p = \{ s \in A^{<\omega} : p^\smallfrown s \in T\} \quad \text{e} \quad X_p = \{x \in A^\omega : p^\smallfrown x \in X\}.
+    \end{equation*}
+  \end{block}
+  \pause
+  \begin{block}{Remark}
+    Se una posizione \(p = (a_0, \ldots, a_{2n+1}) \in T\) è non perdente per \(\mathrm{I}\) allora esiste un \(a_{2n + 2}\) che \(\mathrm{I}\) può giocare (i.e. \((a_{2n +2}) \in T_p\)) tale che per ogni \(a_{2n + 3}\) con cui \(\mathrm{II}\) può rispondere (i.e. \((a_{2n + 2}, a_{2n + 3}) \in T_p\)) la posizione \(p^\smallfrown (a_{2n + 2}, a_{2n + 3}) \in T\) sia ancora non perdente per \(\mathrm{I}\).
   \end{block}
 \end{frame}
 \end{document}
