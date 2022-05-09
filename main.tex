@@ -119,7 +119,7 @@
   \end{block}
 \end{frame}
 
-\section{Determinatezza}
+\section{Determinatezza dei Giochi Chiusi}
 
 \begin{frame}{Determinatezza}
   \begin{block}{Definizione}
@@ -199,6 +199,66 @@
     \begin{flushright}
       \qedsymbol
     \end{flushright}
+  \end{block}
+\end{frame}
+
+\section{Ricoprimenti}
+
+\begin{frame}{Ricoprimenti}
+  \begin{block}{Definizione}
+    Dato \(T \subseteq A^{<\omega}\) potato e non-vuoto.
+    Un \textbf{ricoprimento} di \(T\) è una tripla \((\tilde{T}, \pi, \varphi)\) dove
+    \begin{itemize}
+    \item[1.] \(\tilde{T}\) è un albero potato e non-vuoto;
+    \item[2.] \(\pi:\tilde{T} \to T\) è monotona i.e. se \(s \subseteq t\) allora \(\pi(s) \subseteq \pi(t)\) e  tale che \(|\pi(s)| = |s|\);
+    \item[3.] \(\varphi\) mappa strategie per \(\mathrm{I}\) (e per \(\mathrm{II}\)) in \(\tilde{T}\) a strategie per \(\mathrm{I}\) (e per \(\mathrm{II}\)) in \(T\) in modo tale che \(\varphi(\tilde{\sigma})\) ristretta a posizioni di lunghezza \(\leq n\) dipende solo da \(\tilde{\sigma}\) ristretta a posizioni di lunghezza \(\leq n\);
+    \item[4.] se \(\tilde{\sigma}\) è una strategia per \(\mathrm{I}\) (o \(\mathrm{II}\)) in \(\tilde{T}\) e \(x \in [\varphi(\tilde{\sigma})] \subseteq [T]\) allora esiste \(\tilde{x} \in [\tilde{\sigma}] \subseteq [\tilde{T}]\) tale che \(\pi(\tilde{x}) = x\).
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{}
+    Se \((\tilde{T}, \pi, \varphi)\) è un ricoprimento di \(T\) e \(X \subseteq [T]\) allora a \(G(T, X)\) associamo \(G(\tilde{T}, \tilde{X})\) dove \(\tilde{X} = \pi^{-1}(X)\).
+    Infatti ad ogni partita \(\tilde{x} \in [\tilde{T}]\) corrisponde \(\pi(x) \in [T]\), una partita di \(G(T, X)\).
+  \end{block}
+  \pause
+  \begin{block}{Osservazione}
+    Se \(\tilde{\sigma}\) è una strategia vincente per \(\mathrm{I}\) (o \(\mathrm{II}\)) in \(G(\tilde{T}, \tilde{X})\) allora \(\varphi(\tilde{\sigma})\) è una strategia vincente per \(\mathrm{I}\) (o \(\mathrm{II}\)) in \(G(T, X)\).
+  \end{block}
+  \pause
+  \begin{block}{}
+    Se così non fosse dovrebbe esserci un \(x \in [\varphi(\tilde{\sigma})]\) tale che \(x \not\in X\).
+    Ma, per la condizione 4, esiste un \(\tilde{x} \in [\tilde{\sigma}]\) tale che \(\pi(\tilde{x}) = x\).
+    Ora siccome \(\tilde{\sigma}\) è vincente \(\tilde{x} \in \tilde{X}\) e dunque \(\pi(\tilde{x}) = x \in X\); assurdo.
+  \end{block}
+\end{frame}
+
+\begin{frame}{\(k\)-ricoprimenti}
+  \begin{block}{Definizione}
+    Fissato \(k < \omega\) un ricoprimento \((\tilde{T}, \pi, \varphi)\) è un \textbf{\(k\)-ricoprimento} se
+    \begin{itemize}
+    \item[1.] \(T \upharpoonright 2k = \tilde{T} \upharpoonright 2k\) dove \(T \upharpoonright n = \{x \in T : |x| \leq n\}\);
+    \item[2.] \(\pi \upharpoonright (\tilde{T} \upharpoonright 2k)\) è la funzione identità.
+    \end{itemize}
+  \end{block}
+  \pause
+  \begin{block}{}
+    Questo significa che nel gioco \(G(\tilde{T}, \tilde{X})\) le prime \(k\) mosse di entrambi i giocatori sono le stesse che in \(G(T, X)\).
+  \end{block}
+  \pause
+  \begin{block}{}
+    Inoltre se \(\tilde{\sigma}\) è una strategia per \(\tilde{T}\) allora \(\varphi(\tilde{\sigma}) \upharpoonright 2k = \tilde{\sigma} \upharpoonright 2k\) i.e. \(\varphi\) mappa strategie in strategie senza cambiare le prime \(k\) mosse.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Definizione}
+    Un ricoprimento \((\tilde{T}, \pi, \varphi)\) \textbf{srotola} \(X \subseteq [T]\) se \(\pi^{-1}(X)\) è un clopen di \(\tilde{T}\).
+  \end{block}
+  \pause
+  \begin{block}{Osservazione}
+    In particolare se \((\tilde{T}, \pi, \varphi)\) srotola \(X\) allora \(G(\tilde{T}, \tilde{X})\) è un gioco chiuso, dunque determinato, e quindi anche \(G(T, X)\) è determinato perché \(\varphi\) trasforma strategie vincenti in strategie vincenti.
   \end{block}
 \end{frame}
 
