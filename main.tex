@@ -17,6 +17,7 @@
 \usepackage{amsthm}
 
 \usepackage{tikz}
+\usetikzlibrary{cd}
 
 \begin{document}
 
@@ -276,7 +277,22 @@
 
 \begin{frame}
   \begin{block}{Lemma 1}
-    
+    Siano \(T\) un albero potato e non-vuoto e \(X \subseteq [T]\) un chiuso.
+    Allora per ogni \(k < \omega\) esiste un \(k\)-ricoprimento di \(T\) the srotola \(X\).
+  \end{block}
+  \pause
+  \begin{block}{Lemma 2}
+    Sia \(k < \omega\) e \((T_{i+1}, \pi_{i+1}, \varphi_{i+1})\) un \((k + i)\)-ricoprimento di \(T_i\) per \(i = 0, 1, 2, \ldots\).
+    Allora esiste un albero potato \(T_\infty\) e mappe \(\pi_{\infty, i}, \varphi_{\infty, i}\) tali che \((T_\infty, \pi_{\infty, i}, \varphi_{\infty, i})\) sia un \((k+i)\)-ricoprimento di \(T_i\) e
+    \begin{equation*}
+      \pi_{i+1} \circ \pi_{\infty, i+1} = \pi_{\infty, i}, \quad \varphi_{i+1} \circ \varphi_{\infty, i+1} = \varphi_{\infty, i}.
+    \end{equation*}
+    \begin{equation*}
+      \begin{tikzcd}[sep = large, ampersand replacement=\&]
+        \& \& T_\infty \ar[lld, "\pi_{\infty, 0}"'] \ar[ld, "\pi_{\infty, 1}"] \ar[d, "\pi_{\infty, 2}"] \ar[rd, "\pi_{\infty, 3}"] \& \&\\
+        T_0 \& T_1 \ar[l, "\pi_1"] \& T_2 \ar[l, "\pi_2"] \& T_3 \ar[l, "\pi_3"] \& \cdots
+      \end{tikzcd}
+    \end{equation*}
   \end{block}
 \end{frame}
 
