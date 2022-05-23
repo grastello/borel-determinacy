@@ -65,7 +65,7 @@
 \end{frame}
 
 \begin{frame}{Giochi di Gale-Stewart su \(T\)}
-  Sia \(T \subseteq A^{<\omega}\) non-vuoto e potato, \(X\subseteq [T]\) un payoff set; allora possiamo considerare il gioco \(G(T, X)\)
+  Sia \(T \subseteq A^{<\omega}\) non vuoto e potato, \(X\subseteq [T]\) un payoff set; allora possiamo considerare il gioco \(G(T, X)\)
   \begin{equation*}
     \begin{matrix}
       \mathrm{I} & a_0 & & a_2 & & \ldots\\
@@ -84,11 +84,11 @@
 \begin{frame}{Strategie}
   Fissiamo un gioco \(G(X, T)\).
   \begin{block}{Definizione}
-     Una \textbf{strategia} per \(\mathrm{I}\) è un albero \(\sigma \subseteq T\) tale che
+     Una \textbf{strategia} per \(\mathrm{I}\) è un albero \(\sigma \subseteq T\) tale che per ogni \(j < \omega\)
     \begin{itemize}
     \item[1.] \(\sigma\) è potato e non vuoto;
     \item[2.] se \((a_0, \ldots, a_{2j}) \in \sigma\) allora ogni \((a_0, \ldots, a_{2j}, a_{2j+1}) \in T\) è in \(\sigma\);
-    \item[3.] se \((a_0, \ldots, a_{2j - 1}) \in \sigma\) allora esiste un unico \(a_{2j} \in A\) tale che \((a_0, \ldots, a_{2j - 1}, a_{2j}) \in \sigma\).
+    \item[3.] se \((a_0, \ldots, a_{2j + 1}) \in \sigma\) allora esiste un unico \(a_{2j + 2} \in A\) tale che \((a_0, \ldots, a_{2j + 1}, a_{2j + 2}) \in \sigma\).
     \end{itemize}
   \end{block}
 \end{frame}
@@ -103,7 +103,7 @@
       \node (13) at (2, -1){\(2\)};
       \node (21) at (-2, -2){\(0\)};
       \node (22) at (0, -2){\(1\)};
-      \node (23) at (2, -2){\(2\)};
+      \node (23) at (2, -2){\(1\)};
       \node (dots) at (0, -3.5){\(\vdots\)};
       \node (dots) at (-2, -3.5){\(\vdots\)};
       \node (dots) at (2, -3.5){\(\vdots\)};
