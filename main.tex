@@ -5,6 +5,19 @@
 \usetheme{Dresden}
 \usecolortheme{beaver}
 
+\defbeamertemplate*{headline}{miniframes theme no subsection}
+{%
+  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}{section in head/foot}
+    \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}[miniframes theme no subsection]
+
 \usepackage{libertine}
 \usepackage{unicode-math}
 
@@ -19,7 +32,18 @@
 \usepackage{tikz}
 \usetikzlibrary{cd}
 
+% Titlepage.
+\title{Giochi di Gale-Stewart e Determinatezza Boreliana}
+\author{Gabriele Rastello}
+\date{1 Giugno 2022}
+
+\setbeamertemplate{navigation symbols}{}
+
 \begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
 
 \section{Giochi di Gale-Stewart}
 
